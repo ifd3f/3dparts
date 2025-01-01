@@ -5,8 +5,8 @@ $fa = .5;
 
 size = 50;
 
-ball_bearing_diam = 19.05;
-ball_bearing_spacing = 0.05;
+ball_bearing_diam = 25.4;
+ball_bearing_spacing = 0.01;
 
 gray = false;
 white = false;
@@ -354,13 +354,10 @@ module gray_parts() {
 }
 
 module ball_bearing_hole() {
-    pill_length_factor = 0.45;
-    pill_length = pill_length_factor * size;
     diam = ball_bearing_diam + ball_bearing_spacing;
     union() {
         sphere(d = diam);
         cylinder(h = diam / 2, r = diam / 2);
-        translate([0, 0, diam / 2]) cylinder(h = pill_length - diam / 2, r1 = diam / 2, r2 = 0);
     }
 }
 
