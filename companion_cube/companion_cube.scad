@@ -6,7 +6,7 @@ $fa = .5;
 size = 50;
 
 ball_bearing_diam = 25.4;
-ball_bearing_spacing = 0.01;
+ball_bearing_spacing = 0.25;
 
 gray = false;
 white = false;
@@ -300,6 +300,7 @@ module white_parts() {
 }
 
 module hearts() {
+    rotate([90, 0, 0]) {
         heart_column();
         rotate([0, 90, 0]) heart_column();
 
@@ -314,6 +315,7 @@ module hearts() {
             rotate([90, 180, 0]) heart_column();
             translate([0, -size, 0]) centered_cube([size, size, size], true, false, true);
         } 
+    }
 }
 
 module pink_parts() {
